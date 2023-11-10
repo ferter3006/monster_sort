@@ -1,0 +1,51 @@
+[gd_scene load_steps=10 format=3 uid="uid://cy7bltop4ik4r"]
+
+[ext_resource type="Script" path="res://Autoloads/Audios.gd" id="1_j32jv"]
+[ext_resource type="AudioStream" uid="uid://dayywcwxcc3wk" path="res://Audio/medium-explosion-40472.mp3" id="2_omndb"]
+[ext_resource type="AudioStream" uid="uid://xw3rk6kxj7h0" path="res://Audio/phaseJump2.ogg" id="3_dlh3r"]
+[ext_resource type="AudioStream" uid="uid://b1rfaip7eaa3m" path="res://Audio/oh-no-113125.mp3" id="4_7tsf8"]
+[ext_resource type="AudioStream" uid="uid://83puflytonp6" path="res://Audio/select_002.ogg" id="5_c8toe"]
+[ext_resource type="AudioStream" uid="uid://b46qolbcf6jnu" path="res://Audio/bong_001.ogg" id="6_nhtlu"]
+[ext_resource type="AudioStream" uid="uid://din17o1ya656p" path="res://Audio/Music/buildup.wav" id="7_n51js"]
+[ext_resource type="AudioStream" uid="uid://cdgt1tsdj366y" path="res://Audio/Music/loose.wav" id="8_b28e2"]
+[ext_resource type="AudioStream" uid="uid://bxytor8etuxaj" path="res://Audio/Music/win.wav" id="9_60lr5"]
+
+[node name="audios" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_j32jv")
+
+[node name="explosion" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_omndb")
+bus = &"sounds"
+
+[node name="love" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_dlh3r")
+bus = &"sounds"
+
+[node name="ohno" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_7tsf8")
+bus = &"sounds"
+
+[node name="selector_select" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_c8toe")
+bus = &"sounds"
+
+[node name="bong" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_nhtlu")
+bus = &"sounds"
+
+[node name="Fondo" type="Node2D" parent="."]
+
+[node name="fondo" type="AudioStreamPlayer" parent="Fondo"]
+stream = ExtResource("7_n51js")
+bus = &"music"
+
+[node name="lose" type="AudioStreamPlayer" parent="Fondo"]
+stream = ExtResource("8_b28e2")
+bus = &"music"
+
+[node name="win" type="AudioStreamPlayer" parent="Fondo"]
+stream = ExtResource("9_60lr5")
+bus = &"music"
+
+[connection signal="finished" from="Fondo/fondo" to="." method="_on_fondo_finished"]

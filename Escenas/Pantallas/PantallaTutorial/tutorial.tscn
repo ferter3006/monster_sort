@@ -1,0 +1,248 @@
+[gd_scene load_steps=10 format=3 uid="uid://dwebcparfqvg1"]
+
+[ext_resource type="Script" path="res://Escenas/Pantallas/PantallaTutorial/tutorial.gd" id="1_7b5uo"]
+[ext_resource type="PackedScene" uid="uid://dre0xtbgj7vpd" path="res://Escenas/Background/background_sea.tscn" id="1_xedp6"]
+[ext_resource type="PackedScene" uid="uid://bc4k0evnv0a47" path="res://Escenas/Pantallas/PantallaTutorial/pantalla_tutorial.tscn" id="2_nv5ye"]
+[ext_resource type="PackedScene" uid="uid://cgj4i6ehpc3g7" path="res://Escenas/CanvasLayer/header.tscn" id="3_bgc1s"]
+[ext_resource type="FontFile" uid="uid://cvvix5s84k432" path="res://Fonts/gomarice_kaiju_monster.ttf" id="5_aood7"]
+[ext_resource type="Theme" uid="uid://cecxw5px7ebb1" path="res://Resources/ButtonTheme/defaultButton.tres" id="5_plk8v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wxfa3"]
+bg_color = Color(0, 0, 0, 0.666667)
+border_color = Color(0, 0, 0, 0.247059)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_3xnwk"]
+font_size = 29
+
+[sub_resource type="LabelSettings" id="LabelSettings_kp7wy"]
+font = ExtResource("5_aood7")
+font_size = 49
+font_color = Color(0, 0, 0, 1)
+
+[node name="Tutorial" type="Node2D"]
+script = ExtResource("1_7b5uo")
+
+[node name="background" parent="." instance=ExtResource("1_xedp6")]
+
+[node name="PantallaTutorial" parent="." instance=ExtResource("2_nv5ye")]
+
+[node name="Header" parent="." instance=ExtResource("3_bgc1s")]
+
+[node name="Steps" type="Node2D" parent="."]
+
+[node name="step1" type="Node2D" parent="Steps"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Steps/step1"]
+offset_left = 241.0
+offset_top = 369.0
+offset_right = 416.0
+offset_bottom = 376.0
+rotation = 0.277291
+color = Color(0, 0, 0, 0.694118)
+
+[node name="Label" type="Label" parent="Steps/step1"]
+offset_left = 415.0
+offset_top = 422.0
+offset_right = 824.0
+offset_bottom = 573.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_wxfa3")
+text = "From this point are gona spawn the monsters"
+label_settings = SubResource("LabelSettings_3xnwk")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="step2" type="Node2D" parent="Steps"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Steps/step2"]
+offset_left = 241.0
+offset_top = 369.0
+offset_right = 416.0
+offset_bottom = 377.0
+rotation = 0.277291
+color = Color(0, 0, 0, 0.694118)
+
+[node name="Label" type="Label" parent="Steps/step2"]
+offset_left = 415.0
+offset_top = 422.0
+offset_right = 824.0
+offset_bottom = 573.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_wxfa3")
+text = "The color of the square shows you the next monster's color"
+label_settings = SubResource("LabelSettings_3xnwk")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="step3" type="Node2D" parent="Steps"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Steps/step3"]
+offset_left = 456.0
+offset_top = 229.0
+offset_right = 631.0
+offset_bottom = 237.0
+rotation = -0.133803
+color = Color(0, 0, 0, 0.694118)
+
+[node name="Label" type="Label" parent="Steps/step3"]
+offset_left = 633.0
+offset_top = 215.0
+offset_right = 1042.0
+offset_bottom = 366.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_wxfa3")
+text = "The objective is to match the monsters with the same color"
+label_settings = SubResource("LabelSettings_3xnwk")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="step4" type="Node2D" parent="Steps"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Steps/step4"]
+offset_left = 490.0
+offset_top = 308.0
+offset_right = 623.0
+offset_bottom = 315.0
+rotation = 0.564762
+color = Color(0, 0, 0, 0.694118)
+
+[node name="Label" type="Label" parent="Steps/step4"]
+offset_left = 605.0
+offset_top = 388.0
+offset_right = 1014.0
+offset_bottom = 539.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_wxfa3")
+text = "When you fail once, the level its already unreachable"
+label_settings = SubResource("LabelSettings_3xnwk")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="step5" type="Node2D" parent="Steps"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Steps/step5"]
+offset_left = 490.0
+offset_top = 308.0
+offset_right = 623.0
+offset_bottom = 315.0
+rotation = 0.564762
+color = Color(0, 0, 0, 0.694118)
+
+[node name="Label" type="Label" parent="Steps/step5"]
+offset_left = 605.0
+offset_top = 388.0
+offset_right = 1014.0
+offset_bottom = 539.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_wxfa3")
+text = "But you can keep playing it for test"
+label_settings = SubResource("LabelSettings_3xnwk")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="step8" type="Node2D" parent="Steps"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Steps/step8"]
+offset_left = 578.0
+offset_top = 386.0
+offset_right = 624.0
+offset_bottom = 391.0
+rotation = 2.45247
+color = Color(0, 0, 0, 0.694118)
+
+[node name="Label" type="Label" parent="Steps/step8"]
+offset_left = 126.0
+offset_top = 418.0
+offset_right = 535.0
+offset_bottom = 569.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_wxfa3")
+text = "This is a selector"
+label_settings = SubResource("LabelSettings_3xnwk")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="step9" type="Node2D" parent="Steps"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Steps/step9"]
+offset_left = 578.0
+offset_top = 386.0
+offset_right = 624.0
+offset_bottom = 391.0
+rotation = 2.45247
+color = Color(0, 0, 0, 0.694118)
+
+[node name="Label" type="Label" parent="Steps/step9"]
+offset_left = 126.0
+offset_top = 418.0
+offset_right = 535.0
+offset_bottom = 569.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_wxfa3")
+text = "Click on it
+to change the path"
+label_settings = SubResource("LabelSettings_3xnwk")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="step10" type="Node2D" parent="Steps"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Steps/step10"]
+visible = false
+offset_left = 578.0
+offset_top = 386.0
+offset_right = 624.0
+offset_bottom = 391.0
+rotation = 2.45247
+color = Color(0, 0, 0, 0.694118)
+
+[node name="Label" type="Label" parent="Steps/step10"]
+offset_left = 377.0
+offset_top = 452.0
+offset_right = 786.0
+offset_bottom = 603.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_wxfa3")
+text = "Good Luck!"
+label_settings = SubResource("LabelSettings_3xnwk")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 444.0
+offset_top = 25.0
+offset_right = 716.0
+offset_bottom = 80.0
+text = "  How to play?  "
+label_settings = SubResource("LabelSettings_kp7wy")
+
+[node name="ExitTutorial" type="Button" parent="."]
+offset_left = 1007.0
+offset_top = 18.0
+offset_right = 1127.0
+offset_bottom = 62.0
+theme = ExtResource("5_plk8v")
+text = "Exit tutorial"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="ExitTutorial" to="." method="_on_exit_tutorial_pressed"]

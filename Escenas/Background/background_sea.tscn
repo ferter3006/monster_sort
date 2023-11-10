@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dre0xtbgj7vpd"]
+
+[ext_resource type="Texture2D" uid="uid://vh5kawe2u1hn" path="res://Assets/KeenyMapPackSpriteSheet/mapTile_188.png" id="1_f3qu3"]
+
+[node name="background" type="TextureRect"]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_f3qu3")
+stretch_mode = 1

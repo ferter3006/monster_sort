@@ -1,0 +1,291 @@
+[gd_scene load_steps=24 format=3 uid="uid://ccgnq0hn13s23"]
+
+[ext_resource type="Script" path="res://Escenas/Home/home.gd" id="1_4vlkk"]
+[ext_resource type="PackedScene" uid="uid://dre0xtbgj7vpd" path="res://Escenas/Background/background_sea.tscn" id="1_ikl4j"]
+[ext_resource type="PackedScene" uid="uid://cgj4i6ehpc3g7" path="res://Escenas/CanvasLayer/header.tscn" id="1_uxkvb"]
+[ext_resource type="PackedScene" uid="uid://bphuauiibrtth" path="res://Escenas/CanvasLayer/RecuadroMenu.tscn" id="3_u3ipm"]
+[ext_resource type="LabelSettings" uid="uid://d4jpifb3vqri2" path="res://Resources/LabelMenu/LabelTitleMenu.tres" id="4_o0ktc"]
+[ext_resource type="Theme" uid="uid://cecxw5px7ebb1" path="res://Resources/ButtonTheme/defaultButton.tres" id="4_vn44n"]
+[ext_resource type="Texture2D" uid="uid://rvr2mwwspbcv" path="res://Assets/CapturasHowTo/01.jpg" id="7_8agw4"]
+[ext_resource type="Script" path="res://Escenas/Home/HowToPlay.gd" id="7_mueen"]
+[ext_resource type="PackedScene" uid="uid://pglesc288xc6" path="res://Escenas/CanvasLayer/recuadro_gran_menu.tscn" id="8_ly7bw"]
+[ext_resource type="Texture2D" uid="uid://v6cpoaaaitbh" path="res://Assets/CapturasHowTo/02.jpg" id="8_s2033"]
+[ext_resource type="Texture2D" uid="uid://b26elaue1hbxa" path="res://Assets/CapturasHowTo/03.jpg" id="9_nn7nj"]
+[ext_resource type="Texture2D" uid="uid://iy6scno84leu" path="res://Assets/CapturasHowTo/04.jpg" id="10_g7d5n"]
+[ext_resource type="Texture2D" uid="uid://cw8jtbcdky236" path="res://Assets/CapturasHowTo/05.jpg" id="11_mfo8y"]
+[ext_resource type="Script" path="res://Escenas/Home/MapSelector.gd" id="14_hfnqp"]
+[ext_resource type="FontFile" uid="uid://cvvix5s84k432" path="res://Fonts/gomarice_kaiju_monster.ttf" id="14_qvjvq"]
+[ext_resource type="Texture2D" uid="uid://cwu0rj0r0pf1f" path="res://Assets/PantallasPreview/Pantalla0.jpg" id="15_vacfu"]
+[ext_resource type="Texture2D" uid="uid://ckpi6qsxo24n8" path="res://Assets/PantallasPreview/borde.png" id="17_adwe1"]
+[ext_resource type="PackedScene" uid="uid://csbb6m8v2g5va" path="res://Escenas/Home/cleared.tscn" id="18_xf4jd"]
+[ext_resource type="Script" path="res://Escenas/Home/ModoVelocidad.gd" id="19_jd1ql"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dtkta"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_iugpb"]
+font = ExtResource("14_qvjvq")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vn4a5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wo0pk"]
+font_color = Color(1, 0.443137, 0, 1)
+
+[node name="Home" type="Node2D"]
+script = ExtResource("1_4vlkk")
+
+[node name="background" parent="." instance=ExtResource("1_ikl4j")]
+
+[node name="Header" parent="." instance=ExtResource("1_uxkvb")]
+
+[node name="TileMap" parent="." instance=ExtResource("3_u3ipm")]
+visible = false
+
+[node name="TileMap2" parent="." instance=ExtResource("8_ly7bw")]
+
+[node name="Menu" type="Node2D" parent="."]
+
+[node name="Home" type="Label" parent="Menu"]
+visible = false
+offset_left = 428.0
+offset_top = 238.0
+offset_right = 722.0
+offset_bottom = 301.0
+text = "Home"
+label_settings = ExtResource("4_o0ktc")
+horizontal_alignment = 1
+
+[node name="HowToPlay" type="Button" parent="Menu"]
+offset_left = 699.0
+offset_top = 18.0
+offset_right = 828.0
+offset_bottom = 66.0
+theme = ExtResource("4_vn44n")
+text = "How to play?"
+
+[node name="About" type="Button" parent="Menu"]
+offset_left = 845.0
+offset_top = 17.0
+offset_right = 974.0
+offset_bottom = 64.0
+theme = ExtResource("4_vn44n")
+text = "About"
+
+[node name="Exit" type="Button" parent="Menu"]
+offset_left = 992.0
+offset_top = 17.0
+offset_right = 1120.0
+offset_bottom = 65.0
+theme = ExtResource("4_vn44n")
+text = "Exit"
+
+[node name="HowToPlay" type="Node2D" parent="." node_paths=PackedStringArray("map_selector")]
+visible = false
+script = ExtResource("7_mueen")
+map_selector = NodePath("../MapSelector")
+
+[node name="Label" type="Label" parent="HowToPlay"]
+offset_left = 330.0
+offset_top = 118.0
+offset_right = 819.0
+offset_bottom = 181.0
+text = "How to Play"
+label_settings = ExtResource("4_o0ktc")
+horizontal_alignment = 1
+
+[node name="Prev" type="Button" parent="HowToPlay"]
+offset_left = 456.0
+offset_top = 503.0
+offset_right = 527.0
+offset_bottom = 549.0
+theme = ExtResource("4_vn44n")
+text = "Prev"
+
+[node name="Exit" type="Button" parent="HowToPlay"]
+offset_left = 537.0
+offset_top = 515.0
+offset_right = 606.0
+offset_bottom = 539.0
+theme = ExtResource("4_vn44n")
+text = "Exit"
+
+[node name="Next" type="Button" parent="HowToPlay"]
+offset_left = 618.0
+offset_top = 505.0
+offset_right = 688.0
+offset_bottom = 551.0
+theme = ExtResource("4_vn44n")
+text = "Next"
+
+[node name="step1" type="Node2D" parent="HowToPlay"]
+visible = false
+
+[node name="Label" type="Label" parent="HowToPlay/step1"]
+offset_left = 440.0
+offset_top = 442.0
+offset_right = 710.0
+offset_bottom = 494.0
+text = "The are many stucked monsters on the road"
+label_settings = SubResource("LabelSettings_dtkta")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="01" type="Sprite2D" parent="HowToPlay/step1"]
+position = Vector2(574, 311)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_8agw4")
+
+[node name="step2" type="Node2D" parent="HowToPlay"]
+visible = false
+
+[node name="Label" type="Label" parent="HowToPlay/step2"]
+offset_left = 440.0
+offset_top = 442.0
+offset_right = 710.0
+offset_bottom = 494.0
+text = "From this point are gona spawm the new monsters"
+label_settings = SubResource("LabelSettings_dtkta")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="02" type="Sprite2D" parent="HowToPlay/step2"]
+position = Vector2(571, 308)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("8_s2033")
+
+[node name="step3" type="Node2D" parent="HowToPlay"]
+visible = false
+
+[node name="Label" type="Label" parent="HowToPlay/step3"]
+offset_left = 440.0
+offset_top = 442.0
+offset_right = 710.0
+offset_bottom = 494.0
+text = "Click on the selectors to change its road path. "
+label_settings = SubResource("LabelSettings_dtkta")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="03" type="Sprite2D" parent="HowToPlay/step3"]
+position = Vector2(579, 308)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("9_nn7nj")
+
+[node name="step4" type="Node2D" parent="HowToPlay"]
+visible = false
+
+[node name="Label" type="Label" parent="HowToPlay/step4"]
+offset_left = 440.0
+offset_top = 442.0
+offset_right = 710.0
+offset_bottom = 494.0
+text = "Match the correct monster's couple"
+label_settings = SubResource("LabelSettings_dtkta")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="04" type="Sprite2D" parent="HowToPlay/step4"]
+position = Vector2(578, 309)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("10_g7d5n")
+
+[node name="step5" type="Node2D" parent="HowToPlay"]
+
+[node name="Label" type="Label" parent="HowToPlay/step5"]
+offset_left = 440.0
+offset_top = 442.0
+offset_right = 710.0
+offset_bottom = 494.0
+text = "...Or Lose! "
+label_settings = SubResource("LabelSettings_dtkta")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="05" type="Sprite2D" parent="HowToPlay/step5"]
+position = Vector2(576, 306)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("11_mfo8y")
+
+[node name="MapSelector" type="Node2D" parent="."]
+script = ExtResource("14_hfnqp")
+
+[node name="Title" type="Label" parent="MapSelector"]
+offset_left = 328.0
+offset_top = 149.0
+offset_right = 822.0
+offset_bottom = 216.0
+text = "Title of the game map here"
+label_settings = SubResource("LabelSettings_iugpb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Preview" type="Sprite2D" parent="MapSelector"]
+position = Vector2(581.5, 337.5)
+scale = Vector2(0.223881, 0.21861)
+texture = ExtResource("15_vacfu")
+
+[node name="Borde" type="Sprite2D" parent="MapSelector"]
+position = Vector2(581.5, 337.5)
+scale = Vector2(0.722997, 0.724382)
+texture = ExtResource("17_adwe1")
+
+[node name="Cleared" parent="MapSelector" instance=ExtResource("18_xf4jd")]
+position = Vector2(697, 201)
+rotation = 0.785398
+scale = Vector2(0.7, 0.7)
+
+[node name="Start" type="Button" parent="MapSelector"]
+offset_left = 511.0
+offset_top = 482.0
+offset_right = 642.0
+offset_bottom = 530.0
+theme = ExtResource("4_vn44n")
+text = "Play"
+
+[node name="Back" type="Button" parent="MapSelector"]
+offset_left = 461.0
+offset_top = 482.0
+offset_right = 505.0
+offset_bottom = 530.0
+theme = ExtResource("4_vn44n")
+text = "<"
+
+[node name="Next" type="Button" parent="MapSelector"]
+offset_left = 648.0
+offset_top = 482.0
+offset_right = 694.0
+offset_bottom = 530.0
+theme = ExtResource("4_vn44n")
+text = ">"
+
+[node name="ModoVelocidad" type="CheckButton" parent="MapSelector"]
+offset_left = 339.0
+offset_top = 102.0
+offset_right = 383.0
+offset_bottom = 148.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vn4a5")
+flat = true
+script = ExtResource("19_jd1ql")
+
+[node name="Label" type="Label" parent="MapSelector/ModoVelocidad"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 1.0
+offset_right = 484.0
+offset_bottom = 45.0
+text = "Velocidad Normal "
+label_settings = SubResource("LabelSettings_wo0pk")
+vertical_alignment = 1
+
+[connection signal="pressed" from="Menu/HowToPlay" to="." method="_on_how_to_play_pressed"]
+[connection signal="pressed" from="Menu/About" to="." method="_on_about_pressed"]
+[connection signal="pressed" from="Menu/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="HowToPlay/Prev" to="HowToPlay" method="_on_prev_pressed"]
+[connection signal="pressed" from="HowToPlay/Exit" to="HowToPlay" method="_on_exit_pressed"]
+[connection signal="pressed" from="HowToPlay/Next" to="HowToPlay" method="_on_next_pressed"]
+[connection signal="pressed" from="MapSelector/Start" to="MapSelector" method="_on_start_pressed"]
+[connection signal="pressed" from="MapSelector/Back" to="MapSelector" method="_on_back_pressed"]
+[connection signal="pressed" from="MapSelector/Next" to="MapSelector" method="_on_next_pressed"]
+[connection signal="toggled" from="MapSelector/ModoVelocidad" to="MapSelector/ModoVelocidad" method="_on_toggled"]

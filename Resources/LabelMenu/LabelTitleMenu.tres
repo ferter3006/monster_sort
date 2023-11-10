@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://d4jpifb3vqri2"]
+
+[ext_resource type="FontFile" uid="uid://cvvix5s84k432" path="res://Fonts/gomarice_kaiju_monster.ttf" id="1_s6soo"]
+
+[resource]
+font = ExtResource("1_s6soo")
+font_size = 59
+font_color = Color(1, 0, 0.721569, 1)

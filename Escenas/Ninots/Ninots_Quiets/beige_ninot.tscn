@@ -1,0 +1,288 @@
+[gd_scene load_steps=19 format=3 uid="uid://dyukbncqc2grs"]
+
+[ext_resource type="Script" path="res://Classes/Ninot/NinotQuietClass.gd" id="1_ofrd3"]
+[ext_resource type="Texture2D" uid="uid://cl2y3g5b66t5r" path="res://Assets/KeenyMapPackSpriteSheet/mapPack_tilesheet.png" id="1_ywgv5"]
+[ext_resource type="Texture2D" uid="uid://lhpnmfwo5leh" path="res://Assets/KennyExplosionSmoke/explosionSmoke1.png" id="2_6vxeu"]
+[ext_resource type="Texture2D" uid="uid://dr2aiwlhiq553" path="res://Assets/KennyExplosionSmoke/explosionSmoke2.png" id="3_sfbxt"]
+[ext_resource type="Texture2D" uid="uid://57r523m20vy5" path="res://Assets/KennyExplosionSmoke/explosionSmoke3.png" id="4_iode0"]
+[ext_resource type="Texture2D" uid="uid://0ogdaquwh1h4" path="res://Assets/KennyExplosionSmoke/explosionSmoke4.png" id="5_hw45j"]
+[ext_resource type="Texture2D" uid="uid://ddrccojhpkf1q" path="res://Assets/KennyExplosionSmoke/explosionSmoke5.png" id="6_la05o"]
+[ext_resource type="Texture2D" uid="uid://dx4k40yrkhwqu" path="res://Assets/Otros/64x64 RedHeart1.png" id="8_tk7e5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_migsi"]
+radius = 17.0
+height = 42.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t42nj"]
+atlas = ExtResource("1_ywgv5")
+region = Rect2(960, 640, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gtg71"]
+atlas = ExtResource("1_ywgv5")
+region = Rect2(1024, 512, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sau15"]
+atlas = ExtResource("1_ywgv5")
+region = Rect2(1024, 576, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_goi47"]
+atlas = ExtResource("1_ywgv5")
+region = Rect2(960, 576, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cqr6a"]
+atlas = ExtResource("1_ywgv5")
+region = Rect2(960, 512, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3j6px"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t42nj")
+}],
+"loop": false,
+"name": &"beige",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gtg71")
+}],
+"loop": false,
+"name": &"blau",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6vxeu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_sfbxt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_iode0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hw45j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_la05o")
+}],
+"loop": false,
+"name": &"explosion",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sau15")
+}],
+"loop": false,
+"name": &"groc",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_goi47")
+}],
+"loop": false,
+"name": &"rosa",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cqr6a")
+}],
+"loop": false,
+"name": &"verd",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_0btis"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("animacionLove/Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -15)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("animacionLove/Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("animacionLove/Sprite2D:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("animacionLove/Sprite2D:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.8, 0.8)]
+}
+
+[sub_resource type="Animation" id="Animation_08vck"]
+resource_name = "love"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("animacionLove/Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -15), Vector2(0, -38)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("animacionLove/Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("animacionLove/Sprite2D:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("animacionLove/Sprite2D:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.8, 0.8), Vector2(1.2, 1.2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_osf50"]
+_data = {
+"RESET": SubResource("Animation_0btis"),
+"love": SubResource("Animation_08vck")
+}
+
+[node name="ninot_quiet" type="Node2D"]
+script = ExtResource("1_ofrd3")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -17)
+shape = SubResource("CapsuleShape2D_migsi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_3j6px")
+animation = &"beige"
+autoplay = "beige"
+
+[node name="animacionLove" type="Node2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="animacionLove"]
+root_node = NodePath("../..")
+speed_scale = 2.0
+libraries = {
+"": SubResource("AnimationLibrary_osf50")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="animacionLove"]
+visible = false
+position = Vector2(0, -15)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("8_tk7e5")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="animation_finished" from="animacionLove/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

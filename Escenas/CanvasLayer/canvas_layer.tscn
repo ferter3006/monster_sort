@@ -1,0 +1,115 @@
+[gd_scene load_steps=11 format=3 uid="uid://b6o144n0oc7tw"]
+
+[ext_resource type="Script" path="res://Escenas/CanvasLayer/canvas_layer.gd" id="1_l6qoi"]
+[ext_resource type="FontFile" uid="uid://cvvix5s84k432" path="res://Fonts/gomarice_kaiju_monster.ttf" id="2_521p3"]
+[ext_resource type="PackedScene" uid="uid://cgj4i6ehpc3g7" path="res://Escenas/CanvasLayer/header.tscn" id="2_davmi"]
+[ext_resource type="Texture2D" uid="uid://ic7bpkrlf7ar" path="res://Assets/ProgressBar/azul.png" id="4_8ho3n"]
+[ext_resource type="Texture2D" uid="uid://dsusuyamtnk6h" path="res://Assets/ProgressBar/verde.png" id="5_fmqda"]
+[ext_resource type="Theme" uid="uid://cecxw5px7ebb1" path="res://Resources/ButtonTheme/defaultButton.tres" id="6_vwkej"]
+[ext_resource type="Script" path="res://Escenas/CanvasLayer/MenuPopUp.gd" id="7_epwkb"]
+[ext_resource type="PackedScene" uid="uid://bphuauiibrtth" path="res://Escenas/CanvasLayer/RecuadroMenu.tscn" id="8_f08st"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yo24n"]
+font = ExtResource("2_521p3")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_vr21n"]
+font = ExtResource("2_521p3")
+font_size = 42
+font_color = Color(1, 0, 1, 1)
+
+[node name="ui_canvas" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_l6qoi")
+
+[node name="Header" parent="." instance=ExtResource("2_davmi")]
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Label_level" type="Label" parent="Node2D"]
+offset_left = 517.0
+offset_top = 4.0
+offset_right = 608.0
+offset_bottom = 78.0
+text = "Level 1"
+label_settings = SubResource("LabelSettings_yo24n")
+vertical_alignment = 1
+
+[node name="Level_ProgresBar" type="TextureProgressBar" parent="Node2D"]
+offset_left = 648.0
+offset_top = 25.0
+offset_right = 688.0
+offset_bottom = 65.0
+texture_under = ExtResource("4_8ho3n")
+texture_progress = ExtResource("5_fmqda")
+tint_under = Color(1, 1, 1, 0.439216)
+tint_progress = Color(0, 1, 0, 1)
+
+[node name="MenuButton" type="Button" parent="Node2D"]
+offset_left = 989.0
+offset_top = 25.0
+offset_right = 1121.0
+offset_bottom = 57.0
+theme = ExtResource("6_vwkej")
+text = "Menu"
+
+[node name="MenuPopUp" type="Node2D" parent="."]
+visible = false
+script = ExtResource("7_epwkb")
+
+[node name="TileMap" parent="MenuPopUp" instance=ExtResource("8_f08st")]
+
+[node name="Resume" type="Button" parent="MenuPopUp"]
+offset_left = 513.0
+offset_top = 458.0
+offset_right = 644.0
+offset_bottom = 498.0
+theme = ExtResource("6_vwkej")
+text = "Resume"
+
+[node name="Restart" type="Button" parent="MenuPopUp"]
+offset_left = 513.0
+offset_top = 404.0
+offset_right = 645.0
+offset_bottom = 446.0
+theme = ExtResource("6_vwkej")
+text = "Restart Level"
+
+[node name="Music" type="Button" parent="MenuPopUp"]
+offset_left = 513.0
+offset_top = 350.0
+offset_right = 645.0
+offset_bottom = 392.0
+theme = ExtResource("6_vwkej")
+text = "Music "
+
+[node name="Sounds" type="Button" parent="MenuPopUp"]
+offset_left = 513.0
+offset_top = 297.0
+offset_right = 645.0
+offset_bottom = 339.0
+theme = ExtResource("6_vwkej")
+text = "Sounds 100%"
+
+[node name="Label" type="Label" parent="MenuPopUp"]
+offset_left = 484.0
+offset_top = 230.0
+offset_right = 669.0
+offset_bottom = 276.0
+text = "Game Paused"
+label_settings = SubResource("LabelSettings_vr21n")
+
+[node name="Home" type="Button" parent="MenuPopUp"]
+offset_left = 514.0
+offset_top = 511.0
+offset_right = 644.0
+offset_bottom = 552.0
+theme = ExtResource("6_vwkej")
+text = "Home"
+
+[connection signal="pressed" from="Node2D/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="MenuPopUp/Resume" to="MenuPopUp" method="_on_resume_pressed"]
+[connection signal="pressed" from="MenuPopUp/Restart" to="MenuPopUp" method="_on_restart_pressed"]
+[connection signal="pressed" from="MenuPopUp/Music" to="MenuPopUp" method="_on_music_pressed"]
+[connection signal="pressed" from="MenuPopUp/Sounds" to="MenuPopUp" method="_on_sounds_pressed"]
+[connection signal="pressed" from="MenuPopUp/Home" to="MenuPopUp" method="_on_home_pressed"]

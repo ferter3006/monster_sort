@@ -1,0 +1,387 @@
+[gd_scene load_steps=23 format=3 uid="uid://dylflms3v1ssp"]
+
+[ext_resource type="Script" path="res://Classes/Pantalla/PantallaClass.gd" id="1_wwfvr"]
+[ext_resource type="PackedScene" uid="uid://b6o144n0oc7tw" path="res://Escenas/CanvasLayer/canvas_layer.tscn" id="2_i7ai7"]
+[ext_resource type="PackedScene" uid="uid://dre0xtbgj7vpd" path="res://Escenas/Background/background_sea.tscn" id="3_5utdj"]
+[ext_resource type="Texture2D" uid="uid://cl2y3g5b66t5r" path="res://Assets/KeenyMapPackSpriteSheet/mapPack_tilesheet.png" id="4_fe0mm"]
+[ext_resource type="PackedScene" uid="uid://b4bt8ihucnoim" path="res://Escenas/SpawnPointColors/SpawnPoint.tscn" id="5_uesh4"]
+[ext_resource type="PackedScene" uid="uid://yphqd4p31v4g" path="res://Escenas/Selector/selector.tscn" id="6_g45qp"]
+[ext_resource type="Script" path="res://Classes/Paths/PathClass.gd" id="7_vl2w5"]
+[ext_resource type="PackedScene" uid="uid://dyukbncqc2grs" path="res://Escenas/Ninots/Ninots_Quiets/beige_ninot.tscn" id="8_fe2xa"]
+[ext_resource type="PackedScene" uid="uid://cgqcm4f71d1dd" path="res://Escenas/Ninots/Ninots_Quiets/blau_ninot.tscn" id="9_e1cyf"]
+[ext_resource type="PackedScene" uid="uid://cqmv4x245rort" path="res://Escenas/Ninots/Ninots_Quiets/rosa_ninot.tscn" id="10_em1vj"]
+[ext_resource type="PackedScene" uid="uid://ck85yfnk052s" path="res://Escenas/Ninots/Ninots_Quiets/verd_ninot.tscn" id="11_nmm75"]
+[ext_resource type="PackedScene" uid="uid://cft0spujpejlk" path="res://Escenas/Ninots/Ninots_Quiets/groc_ninot.tscn" id="12_lxei2"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_41512"]
+texture = ExtResource("4_fe0mm")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+16:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+16:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+16:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+16:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+16:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+16:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+16:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+14:7/0 = 0
+15:7/0 = 0
+16:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+11:9/0 = 0
+13:9/0 = 0
+14:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+13:10/0 = 0
+14:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+9:11/0 = 0
+10:11/0 = 0
+11:11/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_aw1uk"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_41512")
+
+[sub_resource type="Curve2D" id="Curve2D_kp325"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 224, 288, 0, 0, 0, 0, 384, 288)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_tfxx4"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 416, 256, -37.8632, 0.890899, 37.8632, -0.890899, 448, 224, -32.9633, 0.445449, 32.9633, -0.445449, 704, 224, 0, 0, 0, 0, 736, 256)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_c3e0q"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 448, 288, 0, 0, 0, 0, 672, 288)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_g6n3u"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 416, 320, 0.445449, -36.0814, -0.445449, 36.0814, 416, 384, 0, 0, 0, 0, 448, 416, 0, 0, 0, 0, 736, 416)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_g57t0"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 736, 320, 36.7081, 0, -36.7081, 0, 704, 352, 0, 0, 0, 0, 480, 352)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_7po4y"]
+_data = {
+"points": PackedVector2Array(-28.0633, 0.445449, 28.0633, -0.445449, 768, 288, 0, 0, 0, 0, 800, 320, 0, 0, 0, 0, 800, 384)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_tt5o3"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 832, 416, -2.6727, 37.8632, 2.6727, -37.8632, 864, 384, 0, 0, 0, 0, 864, 224)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_w2500"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 800, 448, 44.0995, -1.7818, -44.0995, 1.7818, 768, 480, 0, 0, 0, 0, 384, 480, -0.66742, 34.0384, 0.66742, -34.0384, 352, 448, 0, 0, 0, 0, 352, 416)
+}
+point_count = 5
+
+[node name="Pantalla6" type="Node2D" node_paths=PackedStringArray("first_path")]
+script = ExtResource("1_wwfvr")
+first_path = NodePath("paths_sentit_normal/PathClass")
+spawner_tick_time = 1.5
+ArrayNinots = Array[int]([0, 4, 1, 3, 2, 1, 3, 4, 0, 4])
+
+[node name="ui_canvas" parent="." instance=ExtResource("2_i7ai7")]
+
+[node name="TextureRect" parent="." instance=ExtResource("3_5utdj")]
+metadata/_edit_lock_ = true
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_aw1uk")
+format = 2
+layer_0/tile_data = PackedInt32Array(524296, 393216, 3, 524297, 393216, 3, 524298, 393216, 3, 524295, 393216, 3, 524294, 393216, 3, 524293, 327680, 3, 458757, 327680, 1, 393221, 327680, 1, 327685, 589824, 0, 327684, 393216, 2, 327683, 327680, 2, 262147, 327680, 0, 262148, 393216, 0, 262149, 393216, 0, 262150, 589824, 1, 196614, 327680, 0, 196615, 393216, 0, 196616, 393216, 0, 196617, 393216, 0, 196618, 393216, 0, 196619, 393216, 0, 196620, 393216, 0, 196621, 458752, 0, 262157, 458752, 1, 327693, 458752, 1, 393229, 458752, 1, 458765, 458752, 2, 458764, 524288, 0, 524299, 393216, 2, 458763, 393216, 1, 262156, 393216, 1, 262155, 393216, 1, 262154, 393216, 1, 262153, 393216, 1, 262152, 393216, 1, 262151, 393216, 1, 327687, 393216, 1, 327686, 393216, 1, 327688, 393216, 1, 327689, 393216, 1, 327690, 393216, 1, 327691, 393216, 1, 327692, 393216, 1, 393228, 393216, 1, 393227, 393216, 1, 393226, 393216, 1, 393225, 393216, 1, 393224, 393216, 1, 393223, 393216, 1, 393222, 393216, 1, 458758, 393216, 1, 458759, 393216, 1, 458760, 393216, 1, 458761, 393216, 1, 458762, 393216, 1, 524300, 458752, 2)
+layer_1/name = ""
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array(327685, 589824, 2, 196620, 851968, 6)
+layer_2/name = ""
+layer_2/enabled = true
+layer_2/modulate = Color(1, 1, 1, 1)
+layer_2/y_sort_enabled = false
+layer_2/y_sort_origin = 0
+layer_2/z_index = 0
+layer_2/tile_data = PackedInt32Array(262147, 589824, 11, 262149, 393216, 8, 262148, 393216, 8, 196614, 0, 8, 196615, 393216, 8, 196616, 393216, 8, 196617, 393216, 8, 196618, 393216, 8, 196619, 65536, 8, 262151, 393216, 8, 262152, 393216, 8, 262153, 393216, 8, 262154, 589824, 8, 262156, 65536, 8, 327691, 65536, 9, 327690, 393216, 8, 327689, 393216, 8, 327688, 393216, 8, 327687, 589824, 9, 327686, 327680, 8, 393222, 0, 9, 393223, 393216, 8, 393224, 393216, 8, 393225, 393216, 8, 393226, 393216, 8, 393227, 589824, 8, 327692, 327680, 8, 458764, 65536, 9, 458763, 393216, 8, 458762, 393216, 8, 458761, 393216, 8, 458760, 393216, 8, 458759, 393216, 8, 458758, 393216, 8, 458757, 0, 9, 393221, 524288, 8, 393229, 65536, 9, 327693, 327680, 8, 262157, 327680, 8, 196621, 524288, 8)
+
+[node name="SpawnPoint" parent="." instance=ExtResource("5_uesh4")]
+position = Vector2(224, 288)
+
+[node name="selectors" type="Node2D" parent="."]
+
+[node name="selector" parent="selectors" node_paths=PackedStringArray("IN3", "OUT1", "OUT2", "OUT4") instance=ExtResource("6_g45qp")]
+position = Vector2(416, 288)
+IN3 = NodePath("../../paths_sentit_normal/PathClass")
+OUT1 = NodePath("../../paths_sentit_normal/PathClass2")
+OUT2 = NodePath("../../paths_sentit_normal/PathClass4")
+OUT4 = NodePath("../../paths_sentit_normal/PathClass3")
+IN3_OUT1 = true
+IN3_OUT2 = true
+IN3_OUT4 = true
+
+[node name="selector2" parent="selectors" node_paths=PackedStringArray("IN1", "OUT2", "OUT4") instance=ExtResource("6_g45qp")]
+position = Vector2(736, 288)
+IN1 = NodePath("../../paths_sentit_normal/PathClass2")
+OUT2 = NodePath("../../paths_sentit_normal/PathClass5")
+OUT4 = NodePath("../../paths_sentit_normal/PathClass6")
+IN1_OUT2 = true
+IN1_OUT4 = true
+
+[node name="selector3" parent="selectors" node_paths=PackedStringArray("IN1", "OUT2", "OUT4") instance=ExtResource("6_g45qp")]
+position = Vector2(800, 416)
+IN1 = NodePath("../../paths_sentit_normal/PathClass6")
+OUT2 = NodePath("../../paths_sentit_normal/PathClass8")
+OUT4 = NodePath("../../paths_sentit_normal/PathClass7")
+IN1_OUT2 = true
+IN1_OUT4 = true
+
+[node name="paths_sentit_normal" type="Node2D" parent="."]
+
+[node name="PathClass" type="Path2D" parent="paths_sentit_normal"]
+curve = SubResource("Curve2D_kp325")
+script = ExtResource("7_vl2w5")
+
+[node name="PathClass2" type="Path2D" parent="paths_sentit_normal"]
+curve = SubResource("Curve2D_tfxx4")
+script = ExtResource("7_vl2w5")
+
+[node name="PathClass3" type="Path2D" parent="paths_sentit_normal"]
+curve = SubResource("Curve2D_c3e0q")
+script = ExtResource("7_vl2w5")
+
+[node name="PathClass4" type="Path2D" parent="paths_sentit_normal"]
+curve = SubResource("Curve2D_g6n3u")
+script = ExtResource("7_vl2w5")
+
+[node name="PathClass5" type="Path2D" parent="paths_sentit_normal"]
+curve = SubResource("Curve2D_g57t0")
+script = ExtResource("7_vl2w5")
+
+[node name="PathClass6" type="Path2D" parent="paths_sentit_normal"]
+curve = SubResource("Curve2D_7po4y")
+script = ExtResource("7_vl2w5")
+
+[node name="PathClass7" type="Path2D" parent="paths_sentit_normal"]
+curve = SubResource("Curve2D_tt5o3")
+script = ExtResource("7_vl2w5")
+
+[node name="PathClass8" type="Path2D" parent="paths_sentit_normal"]
+curve = SubResource("Curve2D_w2500")
+script = ExtResource("7_vl2w5")
+
+[node name="paths_sentit_invers" type="Node2D" parent="."]
+
+[node name="ninots_quiets" type="Node2D" parent="."]
+
+[node name="ninot_quiet" parent="ninots_quiets" instance=ExtResource("8_fe2xa")]
+position = Vector2(416, 384)
+
+[node name="ninot_quiet2" parent="ninots_quiets" instance=ExtResource("9_e1cyf")]
+position = Vector2(512, 288)
+
+[node name="ninot_quiet3" parent="ninots_quiets" instance=ExtResource("10_em1vj")]
+position = Vector2(608, 416)
+
+[node name="ninot_quiet4" parent="ninots_quiets" instance=ExtResource("11_nmm75")]
+position = Vector2(480, 224)
+
+[node name="ninot_quiet5" parent="ninots_quiets" instance=ExtResource("10_em1vj")]
+position = Vector2(800, 352)
+
+[node name="ninot_quiet6" parent="ninots_quiets" instance=ExtResource("12_lxei2")]
+position = Vector2(864, 384)
+
+[node name="ninot_quiet7" parent="ninots_quiets" instance=ExtResource("11_nmm75")]
+position = Vector2(544, 480)
+
+[node name="ninot_quiet8" parent="ninots_quiets" instance=ExtResource("11_nmm75")]
+position = Vector2(576, 352)
+
+[node name="ninot_quiet9" parent="ninots_quiets" instance=ExtResource("9_e1cyf")]
+position = Vector2(640, 224)
+
+[node name="ninot_quiet10" parent="ninots_quiets" instance=ExtResource("8_fe2xa")]
+position = Vector2(672, 352)

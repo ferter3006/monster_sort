@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://be00pbmwsgb3c"]
+
+[ext_resource type="Script" path="res://Classes/Paths/PathClass.gd" id="1_7fd82"]
+
+[sub_resource type="Curve2D" id="Curve2D_qr05q"]
+_data = {
+"points": PackedVector2Array(-33.6667, -6.16667, 0, 0, 0, -32, 37.6667, -0.166667, -37.6667, 0.166667, -32, 0)
+}
+point_count = 2
+
+[node name="path_giro_arr_iz" type="Path2D"]
+curve = SubResource("Curve2D_qr05q")
+script = ExtResource("1_7fd82")
+metadata/_edit_lock_ = true

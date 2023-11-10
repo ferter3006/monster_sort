@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://b4bt8ihucnoim"]
+
+[ext_resource type="Texture2D" uid="uid://b8vr1td137b0w" path="res://Assets/Spawns/spawn_beige.png" id="1_5guk0"]
+[ext_resource type="Texture2D" uid="uid://c2y6eqc27idj6" path="res://Assets/Spawns/spawn_blau.png" id="2_ylxq2"]
+[ext_resource type="Texture2D" uid="uid://bce722iyt7j6o" path="res://Assets/Spawns/spawn_groc.png" id="3_7i1wo"]
+[ext_resource type="Texture2D" uid="uid://cpc2g3bc7tmbp" path="res://Assets/Spawns/spawn_rosa.png" id="4_rrhmd"]
+[ext_resource type="Texture2D" uid="uid://ckxelxdjw58yu" path="res://Assets/Spawns/spawn_verd.png" id="5_cambl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mse73"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5guk0")
+}],
+"loop": true,
+"name": &"BEIGE",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ylxq2")
+}],
+"loop": true,
+"name": &"BLAU",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7i1wo")
+}],
+"loop": true,
+"name": &"GROC",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_rrhmd")
+}],
+"loop": true,
+"name": &"ROSA",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_cambl")
+}],
+"loop": true,
+"name": &"VERD",
+"speed": 5.0
+}]
+
+[node name="SpawnPoint" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_mse73")
+animation = &"BEIGE"

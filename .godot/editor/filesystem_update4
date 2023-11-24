@@ -1,7 +1,0 @@
-res://Escenas/Pantallas/Pantalla6/pantalla6.tscn
-res://Resources/LabelMenu/LabelTitleMenu.tres
-res://Resources/ButtonTheme/defaultButton.tres
-res://Escenas/Ninots/Ninots_Quiets/beige_ninot.tscn
-res://Escenas/Selector/selector.tscn
-res://Escenas/Ninots/ninot.tscn
-res://Autoloads/gameStats.gd
